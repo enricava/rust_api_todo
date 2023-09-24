@@ -5,7 +5,7 @@ mod route;
 
 use axum::http::{
     header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE},
-    HeaderValue, Method,
+    Method,
 };
 use route::create_router;
 use tower_http::cors::CorsLayer;
