@@ -2,6 +2,7 @@ mod handlers;
 mod model;
 mod response;
 mod route;
+mod tests;
 
 use axum::http::{
     header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE},
@@ -20,7 +21,7 @@ async fn main() {
     let app = create_router().layer(cors);
 
     println!("🚀 Server started successfully");
-    axum::Server::bind(&"0.0.0.0:8000".parse().unwrap())
+    axum::Server::bind(&"127.0.0.1:8000".parse().unwrap())
         .serve(app.into_make_service())
         .await
         .unwrap();
